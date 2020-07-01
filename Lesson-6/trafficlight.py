@@ -40,6 +40,5 @@ class TrafficLight:
                 sleep(1)
 
 
-
 my_traffic_light = TrafficLight()
 my_traffic_light.running()
