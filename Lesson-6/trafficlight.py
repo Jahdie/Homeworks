@@ -23,17 +23,22 @@ class TrafficLight:
         loops = int(input("Введите количество повторений цикла светофора: "))
         for loop in range(loops):
             for red_second in range(1, int(self.red_seconds) + 1):
-                print(f"\r{Back.RED} {Fore.LIGHTBLACK_EX + 'Стоп!!!'} ", end="", flush=True)
-                sleep(1)
                 TrafficLight.__color = "Red"
+                print(f"\r{Back.RED} {Fore.LIGHTBLACK_EX + TrafficLight.__color} ", end="", flush=True)
+                sleep(1)
             for yellow_second in range(1, int(self.yellow_seconds) + 1):
-                print(f"\r{Back.YELLOW} Внимание!!! ", end="", flush=True)
-                sleep(1)
                 TrafficLight.__color = "Yellow"
-            for green_second in range(1, int(self.green_seconds) + 1):
-                print(f"\r{Back.GREEN} Старт!!! ", end="", flush=True)
+                print(f"\r{Back.YELLOW} {TrafficLight.__color} ", end="", flush=True)
                 sleep(1)
+            for green_second in range(1, int(self.green_seconds) + 1):
                 TrafficLight.__color = "Green"
+                print(f"\r{Back.GREEN} {TrafficLight.__color} ", end="", flush=True)
+                sleep(1)
+            for yellow_second in range(1, int(self.yellow_seconds) + 1):
+                TrafficLight.__color = "Yellow"
+                print(f"\r{Back.YELLOW} {TrafficLight.__color} ", end="", flush=True)
+                sleep(1)
+
 
 
 my_traffic_light = TrafficLight()
