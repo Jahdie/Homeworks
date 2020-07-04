@@ -35,7 +35,7 @@ class Suit(Clothes):
 
     def fabric_consumption(self):
         size_coat = (self.size / 6.5 + 0.5)
-        return f"{size_coat:.2f}"
+        return round(size_coat,2)
 
 
 class Coat(Clothes):
@@ -57,12 +57,12 @@ class Coat(Clothes):
 
     def fabric_consumption(self):
         height_suit = (2 * self.height + 0.3)
-        return f"{height_suit:.2f}"
+        return round(height_suit, 2)
 
 
 my_coat = Coat(220)
 my_suit = Suit(90)
-print(my_suit.size)
-print(my_coat.height)
-print(my_coat.fabric_consumption())
 print(my_suit.fabric_consumption())
+print(my_coat.fabric_consumption())
+print(int(my_coat.fabric_consumption()+my_suit.fabric_consumption()))
+
