@@ -22,3 +22,39 @@
 # Или, количество ячеек клетки равняется 15, количество ячеек в ряду — 5. Тогда метод make_order() вернет
 # строку: *****\n*****\n*****.
 
+class Cells:
+    def __init__(self, num_cells):
+        self.num_cells = num_cells
+
+    def __add__(self, other):
+        return Cells(self.num_cells + other.num_cells)
+
+    def __sub__(self, other):
+        result = self.num_cells - other.num_cells
+        if result < 0:
+            print("Меньше нуля!!!")
+        else:
+            return result
+
+    def __mul__(self, other):
+        return Cells(round(self.num_cells * other.num_cells))
+
+    def __truediv__(self, other):
+        return Cells(round(self.num_cells / other.num_cells))
+
+    def __str__(self):
+        return f"{self.num_cells}"
+
+    def make_order(self, n):
+        my_list = []
+        for i in range(1, self.num_cells + 1):
+            my_list.append("*")
+            if i % n == 0:
+                my_list.append("\n")
+        my_list = "".join(my_list)
+        return my_list
+
+my_cells_1 = Cells(57)
+my_cells_2 = Cells(13)
+print(my_cells_1 * my_cells_2)
+print(my_cells_1.make_order(12))
