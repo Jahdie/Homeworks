@@ -28,7 +28,7 @@ class Matrix:
         return Matrix(matrix_sum)
 
 
-my_matrix_1 = Matrix([[1, 2, 3, 4], [5, 6, 7, 8]])
-my_matrix_2 = Matrix([[9, 10, 11, 12], [13, 14, 15, 16]])
+my_matrix_1 = Matrix([[1, 2, 3, 4], [5, 6, 7, 8], [1, 2, 3, 4]])
+my_matrix_2 = Matrix([[9, 10, 11, 12], [13, 14, 15, 16], [3, 4, 5, 6]])
 
-print(f"{my_matrix_1}+\n{my_matrix_2}=\n{my_matrix_1+my_matrix_2}")
+print(f"{my_matrix_1}+\n{my_matrix_2}=\n{my_matrix_1 + my_matrix_2}")
