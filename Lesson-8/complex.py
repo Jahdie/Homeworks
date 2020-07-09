@@ -32,7 +32,7 @@ class MyComplex:
         complex_str = complex_str.replace("i", "")
         if len(complex_str) == 0:
             complex_str = "1"
-        if len(complex_str) == 1:
+        if len(complex_str) == 1 or (complex_str[0] == "-" and len(complex_str) <= 2):
             complex_list.append(complex_str)
             complex_list.insert(0, "0")
         else:
@@ -40,8 +40,6 @@ class MyComplex:
                 if complex_str[i] == "-" or complex_str[i] == "+":
                     complex_list.append(complex_str[:i])
                     complex_list.append(complex_str[i:])
-                else:
-                    complex_list.append(complex_str)
         if len(complex_list) == 1:
             complex_list.insert(0, "0")
         if complex_list[-1] == "-" or complex_list[-1] == "+":
@@ -50,8 +48,8 @@ class MyComplex:
         return complex_list
 
 
-my_complex1 = MyComplex("3i")
-my_complex2 = MyComplex("i")
+my_complex1 = MyComplex("-8-3i")
+my_complex2 = MyComplex("-3i")
 print(my_complex1 + my_complex2)
 print(my_complex1 * my_complex2)
 
